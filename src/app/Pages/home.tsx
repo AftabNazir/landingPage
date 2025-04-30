@@ -1,9 +1,15 @@
 "use client";
 import React from "react";
+// import Slider from 'react-slick';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import Link from "next/link";
 import Image from "next/image";
 import NavBar from "../Components/Narbar";
-import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { FaStarHalfAlt, FaStar } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -26,7 +32,7 @@ import Bcapital from "../../../public/assets/images/Bcapital.png";
 import AboutLar from "../../../public/assets/images/AboutLar.png";
 import Fleximg from "../../../public/assets/images/Fleximg.png";
 import Exportimg from "../../../public/assets/images/Expertimg.png";
-import Slider from "react-slick";
+
 
 export default function Home() {
   const sliderdata = [
@@ -36,6 +42,7 @@ export default function Home() {
     { coursename: "Call Center Training", numOfCourses: "(22) Courses" },
     { coursename: "Business Accounting", numOfCourses: "(10) Courses" },
   ];
+  
 
   const settings = {
     dots: true,
@@ -157,20 +164,32 @@ export default function Home() {
             </div>
             <div className="border-b-4 border-[#F86537] w-[80px] my-2 sm:my-3 mb-8"></div>
           </div>
-          <Slider {...settings} className="mb-8">
-            {sliderdata.map((item, index) => (
-              <div key={index} className="px-2">
-                <div className="bg-gray-300 flex flex-col justify-center items-center rounded-4xl p-2 h-[80px]">
-                  <div className="font-semibold text-center">
-                    {item.coursename}
+          <div className="px-2 sm:px-0">
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={10}
+              slidesPerView={1}
+              navigation
+              pagination={{ clickable: true }}
+              breakpoints={{
+                480: { slidesPerView: 2, spaceBetween: 15 },
+                640: { slidesPerView: 3, spaceBetween: 20 },
+                1024: { slidesPerView: 4, spaceBetween: 25 }
+              }}
+            >
+              {sliderdata.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="bg-gray-300 flex flex-col justify-center items-center rounded-xl p-3 sm:p-4 h-[80px] sm:h-[90px]">
+                    <div className="font-semibold text-center text-sm sm:text-base">{item.coursename}</div>
+                    <div className="text-xs sm:text-sm">{item.numOfCourses}</div>
                   </div>
-                  <div className="text-sm">{item.numOfCourses}</div>
-                </div>
-              </div>
-            ))}
-          </Slider>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mt-10">
             {[
               {
                 title: "Administrative Office Procedures",
