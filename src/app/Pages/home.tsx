@@ -16,7 +16,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebookF, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import { CiLocationOn } from "react-icons/ci";
-import { TbAddressBook } from "react-icons/tb";
 import { FaMedal } from "react-icons/fa";
 import { Card, CardBody, CardTitle } from "reactstrap";
 import { ImBook } from "react-icons/im";
@@ -44,36 +43,7 @@ export default function Home() {
   ];
   
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+
 
   return (
     <>
@@ -468,7 +438,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-4 sm:mb-6 md:mb-8">
-                  B.R. Collins' business management course gave me the
+                  B.R. Collins&apos; business management course gave me the
                   confidence to lead my team to success.
                 </p>
                 <div className="mt-auto flex justify-between items-end">
