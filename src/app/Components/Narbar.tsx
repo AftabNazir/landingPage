@@ -79,8 +79,8 @@ export default function NavBar() {
               />
             </div>
             
-            <div className="border border-gray-400 rounded-2xl h-[42px] w-full flex items-center justify-center mb-4">
-              <select className="text-gray-700 bg-transparent w-full text-center focus:outline-none px-2">
+            <div className="border border-gray-400 rounded-2xl h-[42px] w-full flex items-center justify-center mb-4 ">
+              <select className="text-gray-700 bg-transparent w-full flex justify-center items-center text-center focus:outline-none px-2 ml-2">
                 <option value="">Course</option>
                 <option value="option1">Option 1</option>
                 <option value="option2">Option 2</option>
